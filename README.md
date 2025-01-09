@@ -1,5 +1,5 @@
 # mypkg
-// mypkg の説明を追加する
+// mypkg の説明を追加する \
 ![test](https://github.com/HorigutiStudent/mypkg/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
 <img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat">
