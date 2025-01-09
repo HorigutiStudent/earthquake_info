@@ -1,5 +1,7 @@
 #!/bin/bash
-#TODO : SPDX License 
+
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
 
 dir=~
 [ "$1" != "" ] && dir="$1"

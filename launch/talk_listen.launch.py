@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
+
+import argparse
+
 import launch
 import launch.actions
 import launch.substitutions
@@ -11,6 +16,8 @@ def generate_launch_description():
             package = 'mypkg',
             executable = 'talker',
             )
+    #テスト用
+    
     listener = launch_ros.actions.Node(
             package = 'mypkg',
             executable = 'listener',

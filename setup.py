@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
+
 from setuptools import find_packages, setup
 import os
 from glob import glob

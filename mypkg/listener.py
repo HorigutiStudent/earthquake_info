@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# SPDX-FileCopyrightText: 2025 Horiguchi Masahumi 
+# SPDX-License-Identifier: MIT
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
@@ -18,5 +21,12 @@ def main():
     rclpy.init()
     node = Listener()
     rclpy.spin(node)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        pass
 
     

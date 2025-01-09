@@ -1,10 +1,11 @@
 # mypkg
-// mypkg の説明を追加する \
+1s毎に最新の地震情報をパブリッシュするROS2のパッケージ \
+地方を絞って表示させることもできる \ 
+
 ![test](https://github.com/HorigutiStudent/mypkg/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
 <img src="https://img.shields.io/badge/-Python-F9DC3E.svg?logo=python&style=flat">
 ## Requirements
-
 
 - Linux OS
   - Ubuntu 22.04 
@@ -20,8 +21,8 @@
 ```sh
 #実行例とその結果を書く
 ```
-## Packages
-- 各パッケージ
+## Nodes
+- 各ノード名
   - その説明
 
 ## Tested
