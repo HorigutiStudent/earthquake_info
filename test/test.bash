@@ -1,7 +1,7 @@
 #!/bin/bash
 #TODO : SPDX License 
 
-dir=/home/akage/practice
+dir=~
 [ "$1" != "" ] && dir="$1"
 cd $dir/ros2_ws
 dir=~
