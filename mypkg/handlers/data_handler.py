@@ -39,11 +39,11 @@ class DataHandler:
     def get_data(self,data) -> list:
         self.data = data
         # return self.__get_tunami()
-        data_list = []
+        data_list = ["none" for _ in range(len(self.functions))]
         config_dict = asdict(self.data_config)
         for i,val in enumerate(config_dict.values()):
             if val is True:
-                data_list.append(self.functions[i]())
+                data_list[i] = (self.functions[i]())
         return data_list
         
           

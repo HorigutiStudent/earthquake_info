@@ -32,7 +32,8 @@ class Talker(Node):
         data_list = self.get_data()
         msg = self.msg_handler.send_msg(data_list)
         self.pub.publish(msg)
-        print("datasended")
+        self.get_logger().info(f'Publishing: {msg.datetime}, {msg.epicentre},{msg.max_seismic},{msg.prefecture},{msg.city},{msg.magnitude},{msg.tunami}')
+        
         
     def get_data(self) -> None:
         data = self.json_handler.parse(self.data_url)
