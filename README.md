@@ -1,6 +1,5 @@
 # mypkg
-1s毎に最新の地震情報をパブリッシュするROS2のパッケージ \
-地方を絞って表示させることもできる \ 
+1s毎に最新の地震情報をパブリッシュするROS2のパッケージ 
 
 ![test](https://github.com/HorigutiStudent/mypkg/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
@@ -11,7 +10,8 @@
   - Ubuntu 22.04 
 - ROS 2
   - Humble
-
+- [Earthquake_msg](https://github.com/HorigutiStudent/Earthquake_msg)
+  - 今回使用するメッセージ型を定義したパッケージ
 ## Installation 
 ### Source Build
 ```sh

@@ -30,7 +30,7 @@ class MsgHandler:
                     data_list[i] = self.__convert_type(data_list[i])
                 self.msgs[i] = data_list[i]
             except:
-                continue
+                self.msgs[i] = "none"
         return self.msg
       
       
