@@ -10,88 +10,72 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
 
+from mypkg.handlers.data_handler import DataConfig,DataHandler
+from mypkg.handlers.json_handler import JsonHandler
+
 class Talker(Node):
-    def __init__(self,):
+    def __init__(self,data_config:DataConfig):
         super().__init__("talker")
         self.pub = self.create_publisher(Int16,"countup",10)
-        self.create_timer(0.5,self.cb)
-        self.n = 0
-
+        self.create_timer(1,self.cb)
+        # self.n = 0
+        self.data_config = data_config
+        self.json_handler = JsonHandler()
+        self.data_handler = DataHandler(self.data_config)
+        
+        self.data_url = "https://www.jma.go.jp/bosai/quake/data/list.json"
 
     def cb(self):
+        self.get_data()
         msg = Int16()
-        msg.data = self.n
+        # msg.data = self.n
         self.pub.publish(msg)
-        self.n += 1
+        # self.n += 1
+        
+    def get_data(self) -> None:
+        data = self.json_handler.parse(self.data_url)
+        json_url = "https://www.jma.go.jp/bosai/quake/data/" + data[0]["json"]
+        specific_data = self.json_handler.parse(json_url)
+        data_list = self.data_handler.get_data(specific_data)
+        print(data_list)
+        
+        
 
 
 def main():
     #ユーザーからの入力を入れる
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
-      '--region',
-      default='none',
-      type=str,
-      help='地方を限定して取得する'
+        '--city',
+        default=False,
+        action='store_true',
+        help='最大震度観測地点を知りたい場合にセットする'
     )
     arg_parser.add_argument(
-      '--prefecture',
-      default='none',
-      type=str,
-      help='県を限定して取得する'
+        '--magnitude',
+        default=False,
+        action='store_true',
+        help='マグニチュードを知りたい場合にセットする'
+    )
+    arg_parser.add_argument(
+        '--tunami',
+        default=False,
+        action='store_true',
+        help='津波情報を知りたい場合にセットする'
     )
     
     args,other_args = arg_parser.parse_known_args()
-    print(args.region)
-    raise KeyboardInterrupt
+    #ユーザからの入力を設定する
+    data_confing = DataConfig(
+      city=args.city,
+      magnitude=args.magnitude,
+      tunami=args.tunami
+    )
     rclpy.init(args=other_args)
-    node = Talker()
+    node = Talker(data_confing)
     rclpy.spin(node)
     
-    try:
-        main()
-    except KeyboardInterrupt:
-        pass
-      
-    print("stop spin")
-    time.sleep(1.0)
-    
-    pass
     # rclpy.init()
     # node = Talker()
     # rclpy.spin(node)
-
-
-if __name__ == "__main__":
-    #ユーザーからの入力を入れる
-    arg_parser = argparse.ArgumentParser()
-    arg_parser.add_argument(
-      '--region',
-      default='none',
-      type=str,
-      help='地方を限定して取得する'
-    )
-    arg_parser.add_argument(
-      '--prefecture',
-      default='none',
-      type=str,
-      help='県を限定して取得する'
-    )
-    
-    args,other_args = arg_parser.parse_known_args()
-    print(args.region)
-    #raise KeyboardInterrupt
-    rclpy.init(other_args)
-    node = Talker()
-    rclpy.spin()
-    
-    try:
-        main()
-    except KeyboardInterrupt:
-        pass
-      
-    print("stop spin")
-    time.sleep(1.0)
-    
-    rclpy.shutdown()
     

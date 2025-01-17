@@ -25,7 +25,7 @@ setup(
     maintainer='horiguti',
     maintainer_email='s23c1127lc@s.chibakoudai.jp',
     description='a package for practice',
-    license='BSD-3-Clause',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

@@ -5,8 +5,13 @@
 
 from dataclasses import dataclass,asdict
 
+
 @dataclass
 class DataConfig:
+    """
+    どの情報を入手するかを一括管理するためのクラス
+    選択肢を追加するならDtaHandlerのfunctionsにも追加する
+    """
     datetime:     bool = True  #日時
     epicentre:    bool = True  #震源地
     max_seismic:  bool = True  #最大震度
@@ -14,6 +19,7 @@ class DataConfig:
     city:         bool = False #震源地-市名
     magnitude:    bool = False #マグニチュード
     tunami:       bool = False #津波情報
+    
     
 class DataHandler:
     def __init__(self,data_config:DataConfig):
@@ -38,8 +44,8 @@ class DataHandler:
         for i,val in enumerate(config_dict.values()):
             if val is True:
                 data_list.append(self.functions[i]())
-        print(data_list)
-      
+        return data_list
+        
           
     def updtae_config(self,data_config:DataConfig) -> None:
         self.data_config = data_config
@@ -65,6 +71,7 @@ class DataHandler:
       
     def __get_tunami(self) -> str:
         return self.data["Body"]["Comments"]["ForecastComment"]["Text"]
+      
       
 if __name__ == "__main__":
     import sys
