@@ -75,8 +75,8 @@ class DataHandler:
       
 if __name__ == "__main__":
     import sys
-    sys.path.append("/home/akage/practice/ros2_ws/src/mypkg")
-    from mypkg.handlers.json_handler import JsonHandler
+    sys.path.append("/home/akage/practice/ros2_ws/src/earthquake_info")
+    from earthquake_info.handlers.json_handler import JsonHandler
     
     jsonhandler = JsonHandler()
     url = "https://www.jma.go.jp/bosai/quake/data/list.json"
