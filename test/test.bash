@@ -12,8 +12,8 @@ colcon build
 source $dir/.bashrc
 # source /opt/ros/humble/setup.bash
 source $dir/ros2_ws/install/setup.bash
-# timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
+timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
 
-# cat /tmp/earthquake_info.log
+cat /tmp/earthquake_info.log
 # cat /tmp/earthquake_info.log | grep 'published 1:'
 
