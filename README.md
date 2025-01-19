@@ -10,24 +10,43 @@
   - Ubuntu 22.04 
 - ROS 2
   - Humble
+- Python3
 - [Earthquake_msg](https://github.com/HorigutiStudent/Earthquake_msg)
-  - 今回使用するメッセージ型を定義したパッケージ
+  - メッセージ型を定義したパッケージ
 ## Installation 
 ### Source Build
 ```sh
-#ビルドまでの手順を書く
+# ワークスペースの作成
+mkdir ~/ros2_ws/src
+#パッケージのダウンロード
+cd ~/ros2_ws/src
+git clone https://github.com/HorigutiStudent/Earthquake_Info.git
+git clone https://github.com/HorigutiStudent/Earthquake_msg
+#ライブラリのインストール
+
+#パッケージのビルド
+cd ~/ros2_ws
+colcon build 
+#セットアップ
+source ~/ros2_ws/install/setup.bash
 ```
 ## Usage
+### Quick Start
 ```sh
-#実行例とその結果を書く
+cd ~/ros2_ws
+source install/setup.bash 
+ros2 run earthquake_info get_info
 ```
+より詳しい使い方はearchquake_infoのREADMEを参照してください
 ## Nodes
-- 各ノード名
-  - その説明
+- get_info
+  - サイトから情報を取得するノード
+- listener
+  - テスト用ノード
 
 ## Tested
-- テスト時の環境を書く
-
+- Ubuntu 22.04
+- Python 3.10
 ## License
 - このソフトウェアパッケージは，MITライセンスの下，再頒布および使用が許可される. \
 ライセンスの全文は[LICENSE](https://github.com/HorigutiStudent/mypkg/tree/dev?tab=License-1-ov-file)から確認できる.
