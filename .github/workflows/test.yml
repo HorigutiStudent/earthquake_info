@@ -6,8 +6,13 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v2
-      - name: build and test
+      - name: install dependencies
         run: |
           rsync -av ./ /root/ros2_ws/src/earthquake_info/
+          cd ${{ github.workspace }}/ros2_ws/src 
+          git clone git@github.com:HorigutiStudent/Earthquake_msg.git
+
+      - name: build and test
+        run: |
           cd /root/ros2_ws
           bash -xv ./src/earthquake_info/test/test.bash /root 
