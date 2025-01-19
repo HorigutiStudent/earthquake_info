@@ -9,5 +9,7 @@ jobs:
       - name: build and test
         run: |
           rsync -av ./ /root/ros2_ws/src/mypkg/
+          cd /root/ros2_ws/src
+          git clone git@github.com:HorigutiStudent/Earthquake_msg.git
           cd /root/ros2_ws
           bash -xv ./src/mypkg/test/test.bash /root
