@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>mypkg</name>
+  <name>earthquake_info</name>
   <version>0.0.0</version>
   <description>a package for practice</description>
   <maintainer email="s23c1127lc@s.chibakoudai.jp">horiguti</maintainer>
-  <license>BSD-3-Clause</license>
+  <license>MIT</license>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>launch_ros</exec_depend>

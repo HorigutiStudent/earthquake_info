@@ -10,11 +10,12 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
 
-from mypkg.handlers.data_handler import DataConfig,DataHandler
-from mypkg.handlers.json_handler import JsonHandler
-from mypkg.handlers.msg_handler  import MsgHandler
+from earthquake_info.handlers.data_handler import DataConfig,DataHandler
+from earthquake_info.handlers.json_handler import JsonHandler
+from earthquake_info.handlers.msg_handler  import MsgHandler
 
 from earthquake_msg.msg import Earthquake
+
 
 class Talker(Node):
     def __init__(self,data_config:DataConfig):
@@ -24,15 +25,14 @@ class Talker(Node):
         self.data_config = data_config
         self.json_handler = JsonHandler()
         self.data_handler = DataHandler(self.data_config)
-        self.msg_handler  = MsgHandler()
-        
+        self.msg_handler  = MsgHandler()        
         self.data_url = "https://www.jma.go.jp/bosai/quake/data/list.json"
+
 
     def cb(self):
         data_list = self.get_data()
         msg = self.msg_handler.send_msg(data_list)
         self.pub.publish(msg)
-        self.get_logger().info(f'Publishing: {msg.datetime}, {msg.epicentre},{msg.max_seismic},{msg.prefecture},{msg.city},{msg.magnitude},{msg.tunami}')
         
         
     def get_data(self) -> None:
@@ -66,7 +66,6 @@ def main():
     )
     
     args,other_args = arg_parser.parse_known_args()
-    #ユーザからの入力を設定する
     data_confing = DataConfig(
       city=args.city,
       magnitude=args.magnitude,

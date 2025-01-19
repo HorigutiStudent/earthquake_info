@@ -5,7 +5,6 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16
 
 from earthquake_msg.msg import Earthquake
 
@@ -16,7 +15,7 @@ class Listener(Node):
         
 
     def cb(self,msg):
-        self.get_logger().info("Lis: %s " % msg.city)
+        self.get_logger().info(f'Publishing: {msg.datetime}, {msg.epicentre},{msg.max_seismic},{msg.prefecture},{msg.city},{msg.magnitude},{msg.tunami}')
 
 
 def main():

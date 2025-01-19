@@ -7,35 +7,7 @@
 from earthquake_msg.msg import Earthquake
 import time
 
-# class MsgHandler:
-#     def __init__(self):       
-#         self.msg = Earthquake()
-#         self.msgs = [
-#           self.msg.datetime,
-#           self.msg.epicentre,
-#           self.msg.max_seismic,
-#           self.msg.prefecture,
-#           self.msg.city,
-#           self.msg.magnitude,
-#           self.msg.tunami,
-#         ]
-        
-        
-#     def send_msg(self,data_list:list) -> Earthquake:
-#         for i in range(len(self.msgs)):
-#             try:
-#                 if i == 2:
-#                     data_list[i] = self.__convert_type(data_list[i])
-#                 elif i == 5:
-#                     data_list[i] = self.__convert_type(data_list[i])
-#                 self.msgs[i] = data_list[i]
-#             except:
-#                 self.msgs[i] = "none"
-#         print(self.msg.datetime)
-#         time.sleep(1)
-#         print("-----------")
-#         return self.msg
-      
+
 class MsgHandler:
     def __init__(self):
         self.msg = Earthquake()
@@ -50,8 +22,6 @@ class MsgHandler:
         self.msg.city = data_list[4]
         self.msg.magnitude = self.__convert_type(data_list[5], "float")
         self.msg.tunami = data_list[6]
-        # except (IndexError, ValueError) as e:
-        #     print(f"Error updating message: {e}")
         return self.msg
       
             
@@ -66,6 +36,7 @@ class MsgHandler:
                 return float(val)
             except:
                 return float(0)
+          
           
 if __name__ == "__main__":
     handler = MsgHandler()
