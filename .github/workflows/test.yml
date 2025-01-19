@@ -10,5 +10,5 @@ jobs:
         run: |
           rsync -av ./ /root/ros2_ws/src/earthquake_info/
           cd /root/ros2_ws/src
-          ls .src/earthquake_info/test
+          ls src/earthquake_info/test
           bash -xv ./src/earthquake_info/test/test.bash /root
