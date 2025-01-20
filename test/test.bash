@@ -14,8 +14,8 @@ colcon build
 source $dir/.bashrc
 
 
-source $dir/ros2_ws/install/setup.bash
-source $dir/ros2_ws/install/local_setup.bash
+# source $dir/ros2_ws/install/setup.bash
+# source $dir/ros2_ws/install/local_setup.bash
 
 ros2 pkg list | grep earth*
 # pwd ## /root/ros2_ws
