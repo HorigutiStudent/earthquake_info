@@ -10,6 +10,9 @@ dir=~
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
+
+ros2 pkg list | grep "earth*"
+
 # source /opt/ros/humble/setup.bash
 # source $dir/ros2_ws/install/setup.bash 
 # pwd ## /root/ros2_ws
