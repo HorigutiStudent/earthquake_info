@@ -10,23 +10,21 @@ dir=~
 source /opt/ros/humble/setup.bash
 cd $dir/ros2_ws
 colcon build
-# source $dir/.bashrc
+source $dir/.bashrc
 
 
+source $dir/ros2_ws/install/setup.bash
+source $dir/ros2_ws/install/local_setup.bash
 
+ros2 pkg list | grep earth*
+# pwd ## /root/ros2_ws
+ls src  # earthquake_msg
+        # earthquake_info
 
-# source $dir/ros2_ws/install/setup.bash
-# source $dir/ros2_ws/install/local_setup.bash
+#ls src/earthquake_info/earthquake_info
 
-# ros2 pkg list | grep earth*
-# # pwd ## /root/ros2_ws
-# ls src  # earthquake_msg
-#         # earthquake_info
+timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
 
-# #ls src/earthquake_info/earthquake_info
-
-# timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
-
-# #cat /tmp/earthquake_info.log
-# cat /tmp/earthquake_info.log | grep 'published 1:'
+#cat /tmp/earthquake_info.log
+cat /tmp/earthquake_info.log | grep 'published 1:'
 
