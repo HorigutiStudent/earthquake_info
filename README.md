@@ -13,7 +13,7 @@
 - ROS 2
   - Humble
 - Python3
-- [Earthquake_msg](https://github.com/HorigutiStudent/Earthquake_msg)
+- [earthquake_msg](https://github.com/HorigutiStudent/Earthquake_msg)
   - メッセージ型を定義したパッケージ
 ## Installation 
 ### Source Build
@@ -63,9 +63,9 @@ ros2 run earthquake_info get_info --city True --magnitude True --tunami True
 ```
 ## Nodes
 - get_info
-  - サイトから情報を取得するノード
+  - サイトから情報を取得するパブリッシャノード
 - listener
-  - テスト用ノード
+  - テスト用サブスクライバノード
 
 ## Tested
 - Ubuntu 22.04
@@ -73,6 +73,9 @@ ros2 run earthquake_info get_info --city True --magnitude True --tunami True
 - ROS2 Humble 
   - Docker Container([ryuichiueda/ubuntu22.04-ros2](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2))
 ## License
-- このソフトウェアパッケージは，MITライセンスの下，再頒布および使用が許可される. \
-ライセンスの全文は[LICENSE](https://github.com/HorigutiStudent/mypkg/tree/dev?tab=License-1-ov-file)から確認できる.
+- このソフトウェアパッケージは，MITライセンスの下，再頒布および使用が許可される. 
+- このパッケージは、下記のスライド()のものを、本人の許可を得て自身の著作とした. 
+  - https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024 
+
+- ライセンスの全文は[LICENSE](https://github.com/HorigutiStudent/mypkg/tree/dev?tab=License-1-ov-file)から確認できる.
 - © 2025 Horiguchi Masahumi 

@@ -43,36 +43,31 @@ class Talker(Node):
         return data_list        
 
 
-def main():
-    #ユーザーからの入力を入れる
+def main(args=None):
+    # ユーザーからの入力を入れる
     arg_parser = argparse.ArgumentParser()
     arg_parser.add_argument(
         '--city',
-        default=False,
-        action='store_true',
+        default='false',
         help='最大震度観測地点を知りたい場合にセットする'
     )
     arg_parser.add_argument(
         '--magnitude',
-        default=False,
-        action='store_true',
+        default='false',
         help='マグニチュードを知りたい場合にセットする'
     )
     arg_parser.add_argument(
         '--tunami',
-        default=False,
-        action='store_true',
+        default='false',
         help='津波情報を知りたい場合にセットする'
     )
-    
-    args,other_args = arg_parser.parse_known_args()
-    data_confing = DataConfig(
-      city=args.city,
-      magnitude=args.magnitude,
-      tunami=args.tunami
+
+    args, other_args = arg_parser.parse_known_args(args)
+    data_config = DataConfig(
+        city=args.city.lower() == 'true',
+        magnitude=args.magnitude.lower() == 'true',
+        tunami=args.tunami.lower() == 'true'
     )
     rclpy.init(args=other_args)
-    node = Talker(data_confing)
+    node = Talker(data_config)
     rclpy.spin(node)
-
-    
