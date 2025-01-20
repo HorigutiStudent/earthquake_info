@@ -17,8 +17,8 @@ ls src  # earthquake_msg
         # earthquake_info
 
 ls src/earthquake_info/earthquake_info
-# timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
+timeout 5 ros2 launch earthquake_info test.launch.py | tee - /tmp/earthquake_info.log
 
-# cat /tmp/earthquake_info.log
-# cat /tmp/earthquake_info.log | grep 'published 1:'
+cat /tmp/earthquake_info.log
+cat /tmp/earthquake_info.log | grep 'published 1:'
 
