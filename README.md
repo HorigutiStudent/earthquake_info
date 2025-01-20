@@ -74,7 +74,7 @@ ros2 run earthquake_info get_info --city True --magnitude True --tunami True
   - Docker Container([ryuichiueda/ubuntu22.04-ros2](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2))
 ## License
 - このソフトウェアパッケージは，MITライセンスの下，再頒布および使用が許可される. 
-- このパッケージは、下記のスライド()のものを、本人の許可を得て自身の著作とした. 
+- このパッケージは、下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを、本人の許可を得て自身の著作とした. 
   - https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024 
 
 - ライセンスの全文は[LICENSE](https://github.com/HorigutiStudent/mypkg/tree/dev?tab=License-1-ov-file)から確認できる.
