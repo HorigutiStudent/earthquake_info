@@ -45,3 +45,4 @@ timeout 5 ros2 launch earthquake_info test.launch.py city:=true magnitude:=true 
 
 cat /tmp/earthquake_info.log | grep 'published 1:'
 
+[ "$res" = 0 ] && echo 'OK'
