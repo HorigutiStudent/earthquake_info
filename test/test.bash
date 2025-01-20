@@ -7,13 +7,14 @@ dir=~
 [ "$1" != "" ] && dir="$1"
 # cd $dir/ros2_ws/src
 # git clone git@github.com:HorigutiStudent/earthquake_msg.git
+source /opt/ros/humble/setup.bash
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
 
 
-source /opt/ros/humble/setup.bash
+
 source $dir/ros2_ws/install/setup.bash
 source $dir/ros2_ws/install/local_setup.bash
 
