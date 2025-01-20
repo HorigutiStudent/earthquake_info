@@ -1,7 +1,7 @@
 # earthquake_info
 1s毎に最新の地震情報をパブリッシュするROS2のパッケージ \
 タイムスタンプ・震源地・最大震度・震源に最も近い県名を取得し、ノードに流す。\
-また、市名・マグニチュード・津波情報を追加で取得する
+また、市名・マグニチュード・津波情報を追加で取得することができる。
 
 ![test](https://github.com/HorigutiStudent/mypkg/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) \
