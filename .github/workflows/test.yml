@@ -12,7 +12,7 @@ jobs:
           cd /root/ros2_ws/src
           git clone https://github.com/HorigutiStudent/earthquake_msg.git
           sudo apt update
-          sudp apt install python3-pip
+          sudo apt install python3-pip
           pip3 install requests
       - name: build and test
         run: |
