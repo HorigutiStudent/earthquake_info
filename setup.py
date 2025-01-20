@@ -9,11 +9,12 @@ from glob import glob
 
 
 package_name = 'earthquake_info'
+submodules = 'earthquake_info/handlers'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=[find_packages(exclude=['test']),submodules],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),

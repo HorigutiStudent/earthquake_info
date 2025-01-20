@@ -8,6 +8,7 @@ dir=~
 # cd $dir/ros2_ws/src
 # git clone git@github.com:HorigutiStudent/earthquake_msg.git
 source /opt/ros/humble/setup.bash
+
 cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
@@ -18,7 +19,7 @@ source $dir/ros2_ws/install/local_setup.bash
 
 ros2 pkg list | grep earth*
 # pwd ## /root/ros2_ws
-ls src  # earthquake_msg
+# ls src  # earthquake_msg
         # earthquake_info
 
 #ls src/earthquake_info/earthquake_info
