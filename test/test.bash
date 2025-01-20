@@ -10,7 +10,7 @@ dir=~
 source /opt/ros/humble/setup.bash
 cd $dir/ros2_ws
 colcon build
-source $dir/.bashrc
+# source $dir/.bashrc
 
 
 
