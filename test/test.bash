@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 
 ng () {
-    res = 1
+    res=1
 }
 test_package () {
     timeout 5s sh -c "
@@ -22,16 +22,17 @@ source $dir/.bashrc
 
 # ros2 pkg list | grep earth*
 
-res = 0
+res=0
 
 out=$( test_package city:=true )
-[ "$?" = 0 ] || ng "$LINENO"
+#タイムアウトによって終了すればよい
+[ "$?" = 124 ] || ng "$LINENO"
 
 out=$( test_package magnitude:=true )
-[ "$?" = 0 ] || ng "$LINENO"
+[ "$?" = 124 ] || ng "$LINENO"
 
 out=$( test_package tunami:=true )
-[ "$?" = 0 ] || ng "$LINENO"
+[ "$?" = 124 ] || ng "$LINENO"
 
 #malformed launch argument 'city', expected format '<name>:=<value>'
 out=$( test_package city )
@@ -39,7 +40,7 @@ out=$( test_package city )
 
 #入力ミスがあってもエラーは起こさない
 out=$( test_package tnami:=true )
-[ "$?" = 0 ] || ng "$LINENO"
+[ "$?" = 124 ] || ng "$LINENO"
 
 timeout 5 ros2 launch earthquake_info test.launch.py city:=true magnitude:=true tunami:=true | tee - /tmp/earthquake_info.log
 
