@@ -11,11 +11,13 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-ros2 pkg list | grep earth*
+
 
 source /opt/ros/humble/setup.bash
 source $dir/ros2_ws/install/setup.bash
 source $dir/ros2_ws/install/local_setup.bash
+
+ros2 pkg list | grep earth*
 # pwd ## /root/ros2_ws
 ls src  # earthquake_msg
         # earthquake_info
