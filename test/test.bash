@@ -11,7 +11,7 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 # source /opt/ros/humble/setup.bash
-source $dir/ros2_ws/install/setup.bash 
+# source $dir/ros2_ws/install/setup.bash 
 # pwd ## /root/ros2_ws
 ls src  # earthquake_msg
         # earthquake_info
