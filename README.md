@@ -19,11 +19,11 @@
 ### Source Build
 ```sh
 # ワークスペースの作成
-mkdir ~/ros2_ws/src
+mkdir -p ~/ros2_ws/src
 #パッケージのダウンロード
 cd ~/ros2_ws/src
-git clone https://github.com/HorigutiStudent/Earthquake_Info.git
-git clone https://github.com/HorigutiStudent/Earthquake_msg
+git clone https://github.com/HorigutiStudent/earthquake_info.git
+git clone https://github.com/HorigutiStudent/earthquake_msg
 #ライブラリのインストール
 pip3 install requests
 #パッケージのビルド
@@ -63,7 +63,7 @@ ros2 run earthquake_info get_info --city True --magnitude True --tunami True
 ```
 ## Nodes
 - get_info
-  - サイトから情報を取得するパブリッシャノード
+  - 最新の地震情報を取得するパブリッシャノード
 - listener
   - テスト用サブスクライバノード
 
