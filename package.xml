@@ -4,7 +4,7 @@
   <name>earthquake_info</name>
   <version>0.0.0</version>
   <description>a package for practice</description>
-  <maintainer email="s23c1127lc@s.chibakoudai.jp">horiguti</maintainer>
+  <maintainer email="s23c1127lc@s.chibakoudai.jp">horiguchi</maintainer>
   <license>MIT</license>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
