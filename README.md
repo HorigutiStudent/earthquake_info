@@ -67,7 +67,9 @@ ros2 run earthquake_info get_info --city True --magnitude True --tunami True
   - 最新の地震情報を取得するパブリッシャノード
 - listener
   - テスト用サブスクライバノード
-
+## Topics
+- Publisher1: [earthquake_msg](https://github.com/HorigutiStudent/Earthquake_msg)
+  - タイムスタンプ・震源地・最大震度・震源・市名・マグニチュード・津波情報を出力する
 ## Tested
 - Ubuntu 22.04
 - Python 3.10
