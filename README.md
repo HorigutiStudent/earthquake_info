@@ -41,6 +41,8 @@ cd ~/ros2_ws
 source install/setup.bash 
 
 ros2 run earthquake_info get_info 
+# 別端末
+ros2 run earthquake_info listener
 #1: 2025-01-20T13:26:00+09:00, 石川県能登地方,1,石川県,none,0.0,none
 ```
 ### More Info
@@ -48,18 +50,26 @@ ros2 run earthquake_info get_info
 ```sh
 #市名を追加で取得
 ros2 run earthquake_info get_info --city True
+# 別端末
+ros2 run earthquake_info listener
 #17: 2025-01-20T13:26:00+09:00, 石川県能登地方,1,石川県,志賀町,0.0,none
 
 #マグニチュードを追加で取得
 ros2 run earthquake_info get_info --magnitude True 
+# 別端末
+ros2 run earthquake_info listener
 #21: 2025-01-20T13:26:00+09:00, 石川県能登地方,1,石川県,none,2.4000000953674316,none
 
 #津波情報を追加で取得
 ros2 run earthquake_info get_info --tunami True 
+# 別端末
+ros2 run earthquake_info listener
 #30: 2025-01-20T13:26:00+09:00, 石川県能登地方,1,石川県,none,0.0,この地震による津波の心配はありません。
 
 #3つとも追加で取得
 ros2 run earthquake_info get_info --city True --magnitude True --tunami True 
+# 別端末
+ros2 run earthquake_info listener
 #35: 2025-01-20T13:26:00+09:00, 石川県能登地方,1,石川県,志賀町,2.4000000953674316,この地震による津波の心配はありません。
 ```
 ## Nodes
